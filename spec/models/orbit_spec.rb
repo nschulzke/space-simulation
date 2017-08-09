@@ -26,4 +26,9 @@ RSpec.describe Orbit, type: :model do
     object = Orbit.new orbitable: earth, mass: 1, radius: (400000 + 6371000)
     expect(object.orbital_velocity.round).to be 7672
   end
+  it "calculates angular velocity" do
+    earth = Star.new mass: 5.972E24
+    object = Orbit.new orbitable: earth, mass: 1, radius: (400000 + 6371000)
+    expect(object.angular_velocity.round(5)).to be 0.00113
+  end
 end

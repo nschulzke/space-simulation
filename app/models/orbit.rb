@@ -9,4 +9,8 @@ class Orbit < ApplicationRecord
   def orbital_velocity
     Math.sqrt( ( G_CONSTANT * orbitable.mass ) / radius )
   end
+
+  def angular_velocity
+    orbital_velocity / radius
+  end
 end
