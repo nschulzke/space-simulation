@@ -5,4 +5,8 @@ class Orbit < ApplicationRecord
   def force_of_gravity
     ( G_CONSTANT * mass * orbitable.mass ) / ( radius * radius )
   end
+
+  def orbital_velocity
+    Math.sqrt( ( G_CONSTANT * orbitable.mass ) / radius )
+  end
 end

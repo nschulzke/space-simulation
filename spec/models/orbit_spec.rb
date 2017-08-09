@@ -17,13 +17,13 @@ RSpec.describe Orbit, type: :model do
     expect(orbit.valid?).to be false
   end
   it "calculates force of gravity" do
-    star = Star.new mass: 1
-    orbit = Orbit.new orbitable: star, mass: 1, radius: 1
-    expect(orbit.force_of_gravity).to be G_CONSTANT
-  end
-  it "calculates gravity accurately" do
     earth = Star.new mass: 5.972E24
     object = Orbit.new orbitable: earth, mass: 1, radius: 6371000
     expect(object.force_of_gravity.round(1)).to be 9.8
+  end
+  it "calculates orbital velocity" do
+    earth = Star.new mass: 5.972E24
+    object = Orbit.new orbitable: earth, mass: 1, radius: (400000 + 6371000)
+    expect(object.orbital_velocity.round).to be 7672
   end
 end
