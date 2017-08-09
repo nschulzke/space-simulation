@@ -21,6 +21,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
 end
 
 group :development do
@@ -28,12 +31,6 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :test do
-  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
-  gem 'guard', '~> 2.14', '>= 2.14.1'
-  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
 end
 
 group :production do
