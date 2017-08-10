@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810152702) do
+ActiveRecord::Schema.define(version: 20170810161333) do
 
   create_table "orbits", force: :cascade do |t|
     t.string "orbitable_type"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170810152702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "initial_angle", default: "0.0"
+    t.decimal "initial_velocity"
     t.index ["orbitable_type", "orbitable_id"], name: "index_orbits_on_orbitable_type_and_orbitable_id"
   end
 

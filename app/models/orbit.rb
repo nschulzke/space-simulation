@@ -2,6 +2,12 @@ class Orbit < ApplicationRecord
   belongs_to :orbitable, polymorphic: true
   validates_presence_of :mass, :radius
 
+  after_initialize do
+    if valid?
+      initial_velocity ||= orbital_velocity
+    end
+  end
+
   def force_of_gravity
     ( G_CONSTANT * mass * orbitable.mass ) / ( radius * radius )
   end
