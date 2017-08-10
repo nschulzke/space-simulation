@@ -13,4 +13,8 @@ class Orbit < ApplicationRecord
   def angular_velocity
     orbital_velocity / radius
   end
+
+  def elapsed_seconds
+    DateTime.now.to_i - updated_at.to_i
+  end
 end

@@ -36,4 +36,9 @@ RSpec.describe Orbit, type: :model do
     object = Orbit.new orbitable: earth, mass: 1, radius: (400000 + 6371000)
     expect(object.angular_velocity.round(5)).to eq 0.00113
   end
+  it "calculates elapsed seconds" do
+    star = Star.new mass: 1
+    orbit = Orbit.new orbitable: star, mass: 1, radius: 1, updated_at: DateTime.now - 10.seconds
+    expect(orbit.elapsed_seconds).to eq 10
+  end
 end
