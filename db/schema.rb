@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20170810161333) do
   create_table "orbits", force: :cascade do |t|
     t.string "orbitable_type"
     t.integer "orbitable_id"
-    t.integer "mass"
-    t.integer "radius"
+    t.decimal "mass"
+    t.decimal "radius"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "initial_angle", default: "0.0"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170810161333) do
   end
 
   create_table "stars", force: :cascade do |t|
-    t.integer "mass"
+    t.decimal "mass"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
